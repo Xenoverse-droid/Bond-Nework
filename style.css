@@ -21,6 +21,7 @@ html {
 body {
     height: 100vh;
     color: #fff;
+    /* overflow: hidden; */
 }
 
 a {
@@ -149,6 +150,9 @@ button {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    animation-name: hero;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
 }
 
 .modus {
@@ -160,6 +164,9 @@ button {
     background-image: linear-gradient(90deg, var(--btn-shade), var(--btn-tint));
     backdrop-filter: blur(10px);
     box-shadow: 0 0 5px var(--btn-shade);
+    animation-name: modus;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
 
 }
 
@@ -185,16 +192,23 @@ button {
 .btn:active {
     transform: scale(1.04);
 }
-/* @media (max-width:62.5rem) {
-    html {
-        font-size: 50%;
+
+@keyframes hero {
+    from {
+        transform: translate(-100%);
     }
 
-    video {
-        top: 0;
-        left: 0;
-        width: auto;
-        min-height: auto;
-        min-width: 100vw;
+    to {
+        transform: translate(0%);
     }
-} */
+}
+
+@keyframes modus {
+    from {
+        transform: translate(100%);
+    }
+
+    to {
+        transform: translate(0%);
+    }
+}
